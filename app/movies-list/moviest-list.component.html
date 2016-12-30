@@ -1,0 +1,13 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td>Poster</td>
+            <td>Title</td>
+            <td>Year</td>
+            <td>imdbRating</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr movie-short *ngFor="let movie of movies" [movie]="movie"></tr>
+    </tbody>
+</table>
