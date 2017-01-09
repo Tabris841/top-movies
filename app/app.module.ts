@@ -1,24 +1,52 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { MoviesList } from './movies-list/movies-list.component';
-import { MovieShort } from './movie-short/movie-short.component';
+import {
+    AppRoutingModule,
+    MoviesService,
+    MoviesFilterPipe,
+    MoviesSortingPipe,
+    MoviesPagingPipe,
+    PagerComponent,
+    HeaderComponent,
+    AcStars,
+    AcStar,
+    FooterComponent
+  } from './core/';
 
+import { AppComponent } from './app.component';
+import {
+  MoviesListComponent,
+  MovieShortComponent,
+  DetailsComponent,
+  TopTenComponent
+} from './movies/';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule
-    ],
-    declarations: [
-        AppComponent,
-        MoviesList,
-        MovieShort
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    MoviesListComponent,
+    MovieShortComponent,
+    MoviesFilterPipe,
+    MoviesSortingPipe,
+    MoviesPagingPipe,
+    PagerComponent,
+    HeaderComponent,
+    DetailsComponent,
+    FooterComponent,
+    TopTenComponent,
+    AcStars,
+    AcStar
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
+  ],
+  providers: [MoviesService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

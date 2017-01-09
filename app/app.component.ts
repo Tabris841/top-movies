@@ -4,11 +4,4 @@ import { Component } from '@angular/core';
     selector: 'mvdb-app',
     templateUrl: './app.component.html'
 })
-
-export class AppComponent {
-    title: string;
-
-    constructor() {
-        this.title = 'Top 10 iMDB';
-    }
-}
+export class AppComponent {}

@@ -31,10 +31,7 @@ module.exports = {
 		}, {
 			test: /.css$/,
 			exclude: helpers.root('src', 'app'),
-			loaders: [ExtractTextPlugin.extract({
-				fallbackLoader: 'style-loader',
-				loader: 'css-loader'
-			}), 'to-string-loader', 'css-loader']
+			loaders: [ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader' }), 'to-string-loader', 'css-loader']
 		}]
 	},
 
@@ -56,12 +53,6 @@ module.exports = {
 			{
 				// your Angular Async Route paths relative to this root directory
 			}
-		),
-
-		new webpack.ProvidePlugin({
-			jQuery: 'jquery',
-			$: 'jquery',
-			jquery: 'jquery'
-		})
+		)
 	]
 };
